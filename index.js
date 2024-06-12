@@ -3,6 +3,7 @@ process.loadEnvFile();
 
 import express from "express";
 import router from "./routes/router.js";
+import logger from "./middleware/logger.js";
 const app = express();
 
 // Middleware
@@ -12,7 +13,7 @@ app.use(express.json()); // parse json bodies in the request object
 // app.use(require('./middleware/logger'));
 
 // Redirect requests to endpoint starting with /posts to postRoutes.js
-app.use("/", router);
+app.use("/", logger, router);
 
 // Global Error Handler. IMPORTANT function params MUST start with err
 app.use((err, req, res, next) => {
