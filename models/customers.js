@@ -10,6 +10,10 @@ const customers = {
     let sql = `SELECT * FROM customers WHERE id = ${id};`;
     return db.execute(sql);
   },
+  createNewCustomer: (customer) => {
+    let sql = `INSERT INTO customers (first_name, email, last_name) VALUES ('${customer.name}', '${customer.email}', '${customer.last_name}');`;
+    return db.execute(sql);
+  },
 };
 
 export default customers;

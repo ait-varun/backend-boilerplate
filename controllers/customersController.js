@@ -22,6 +22,16 @@ const customersController = {
       next(error);
     }
   },
+  createNewCustomer: async (req, res, next) => {
+    try {
+      let createdCustomer = req.body;
+
+      let [newCustomer, _] = await customer.createNewCustomer(createdCustomer);
+      res.status(201).json({ customer: newCustomer });
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 
 export default customersController;
