@@ -28,6 +28,16 @@ const customersController = {
     try {
       let createdCustomer = req.body;
 
+      //Check if the customer already exists
+      let [customers, field] = await customer.findByEmail(
+        createdCustomer.email
+      );
+      if (customers.length > 0) {
+        return res.status(409).json({
+          error: `Customer with name ${createdCustomer.email} already exists`,
+        });
+      }
+
       let [newCustomer, _] = await customer.createNewCustomer(createdCustomer);
       res.status(201).json({ customer: newCustomer });
     } catch (error) {
