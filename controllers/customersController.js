@@ -46,8 +46,6 @@ const customersController = {
           .json({ error: `Customer with id ${customerId} not found` });
       }
 
-      let [deletedCustomer, _] = await customer.deleteCustomer(customerId);
-
       res.status(204).end();
     } catch (error) {
       next(error);
