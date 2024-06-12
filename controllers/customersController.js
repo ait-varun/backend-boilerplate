@@ -3,7 +3,8 @@ import customer from "../models/customers.js";
 const customersController = {
   getAllCustomers: async (req, res, next) => {
     try {
-      const [customers, _] = await customer.findAll();
+      // customers contains rows returned by server fields contains extra meta data about rows, if available
+      const [customers, fields] = await customer.findAll();
 
       res.status(200).json({ totalCustomers: customers.length, customers });
     } catch (error) {
