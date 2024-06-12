@@ -1,4 +1,4 @@
-const db = require("../config/db");
+import db from "../config/db.js";
 
 class Customers {
   constructor(title, body) {
@@ -19,4 +19,4 @@ class Customers {
   }
 }
 
-module.exports = Customers;
+export default Customers;

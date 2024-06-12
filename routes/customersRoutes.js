@@ -1,10 +1,10 @@
-const express = require("express");
-const customersControllers = require("../controllers/customersController.js");
+import express from "express";
+import customersController from "../controllers/customersController.js";
 const router = express.Router();
 
 // @route GET && POST - /posts/
-router.route("/").get(customersControllers.getAllCustomers);
+router.route("/").get(customersController.getAllCustomers);
 
-router.route("/:id").get(customersControllers.getCustomerById);
+router.route("/:id").get(customersController.getCustomerById);
 
-module.exports = router;
+export default router;

@@ -1,17 +1,18 @@
 // Load environment variables from a file
 process.loadEnvFile();
 
-const express = require("express");
+import express from "express";
+import router from "./routes/router.js";
 const app = express();
 
 // Middleware
 app.use(express.json()); // parse json bodies in the request object
 
 // Use the middleware logger
-app.use(require('./middleware/logger'));
+// app.use(require('./middleware/logger'));
 
 // Redirect requests to endpoint starting with /posts to postRoutes.js
-app.use("/customers", require("./routes/customersRoutes.js"));
+app.use("/", router);
 
 // Global Error Handler. IMPORTANT function params MUST start with err
 app.use((err, req, res, next) => {

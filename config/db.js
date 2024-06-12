@@ -1,6 +1,6 @@
 // Load environment variables from a file
 process.loadEnvFile();
-const mysql = require("mysql2");
+import mysql from "mysql2";
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -9,4 +9,4 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
-module.exports = pool.promise();
+export default pool.promise();
