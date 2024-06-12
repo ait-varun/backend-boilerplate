@@ -11,7 +11,7 @@ const customers = {
     return db.execute(sql);
   },
   createNewCustomer: (customer) => {
-    let sql = `INSERT INTO customers (first_name, email, last_name) VALUES ('${customer.name}', '${customer.email}', '${customer.last_name}');`;
+    let sql = `INSERT INTO customers (first_name, email, last_name) VALUES ('${customer.first_name}', '${customer.email}', '${customer.last_name}');`;
     return db.execute(sql);
   },
 };
