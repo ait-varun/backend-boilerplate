@@ -38,6 +38,14 @@ const customersController = {
     try {
       let customerId = req.body.id;
 
+      // Check if the customer exists
+      let [customers, field] = await customer.findById(customerId);
+      if (customers.length === 0) {
+        return res
+          .status(404)
+          .json({ error: `Customer with id ${customerId} not found` });
+      }
+
       let [deletedCustomer, _] = await customer.deleteCustomer(customerId);
 
       res.status(204).end();
