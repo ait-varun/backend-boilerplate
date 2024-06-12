@@ -22,6 +22,7 @@ const customersController = {
       next(error);
     }
   },
+
   createNewCustomer: async (req, res, next) => {
     try {
       let createdCustomer = req.body;
@@ -32,6 +33,7 @@ const customersController = {
       next(error);
     }
   },
+
   deleteCustomer: async (req, res, next) => {
     try {
       let customerId = req.body.id;
