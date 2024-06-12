@@ -32,6 +32,17 @@ const customersController = {
       next(error);
     }
   },
+  deleteCustomer: async (req, res, next) => {
+    try {
+      let customerId = req.body.id;
+
+      let [deletedCustomer, _] = await customer.deleteCustomer(customerId);
+
+      res.status(204).end();
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 
 export default customersController;
