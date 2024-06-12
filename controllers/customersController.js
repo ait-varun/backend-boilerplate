@@ -28,6 +28,24 @@ const customersController = {
     try {
       let createdCustomer = req.body;
 
+      if (!createdCustomer.email) {
+        return res.status(400).json({
+          error: "Email is required",
+        });
+      }
+
+      if (!createdCustomer.first_name) {
+        return res.status(400).json({
+          error: "First name is required",
+        });
+      }
+
+      if (!createdCustomer.last_name) {
+        return res.status(400).json({
+          error: "Last name is required",
+        });
+      }
+
       //Check if the customer already exists
       let [customers, field] = await customer.findByEmail(
         createdCustomer.email
