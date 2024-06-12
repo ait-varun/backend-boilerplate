@@ -5,7 +5,7 @@ const customersController = {
     try {
       const [customers, _] = await customer.findAll();
 
-      res.status(200).json({ count: customers.length, customers });
+      res.status(200).json({ totalCustomers: customers.length, customers });
     } catch (error) {
       next(error);
     }
