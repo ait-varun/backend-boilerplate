@@ -1,6 +1,13 @@
 import customer from "../models/customers.js";
 
 const customersController = {
+  /**
+   * Retrieves all customers from the database.
+   * @param {Object} req - The HTTP request object.
+   * @param {Object} res - The HTTP response object.
+   * @param {Function} next - The next middleware function.
+   * @returns {Promise<void>} - Resolves with a JSON response containing the total number of customers and the customer data.
+   */
   getAllCustomers: async (req, res, next) => {
     try {
       // customers contains rows returned by server fields contains extra meta data about rows, if available
@@ -75,7 +82,7 @@ const customersController = {
           .json({ error: `Customer with id ${customerId} not found` });
       }
 
-     await customer.deleteCustomer(customerId);
+      await customer.deleteCustomer(customerId);
 
       res.status(204).end();
     } catch (error) {
