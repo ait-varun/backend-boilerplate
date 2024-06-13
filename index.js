@@ -2,8 +2,8 @@
 process.loadEnvFile();
 
 import express from "express";
-import router from "./routes/router.js";
-import logger from "./middleware/logger.js";
+import router from "./src/routes/router.js";
+import logger from "./src/middleware/logger.js";
 const app = express();
 
 // Middleware
