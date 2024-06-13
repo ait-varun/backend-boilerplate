@@ -25,6 +25,12 @@ const customersController = {
 
       let [customers, _] = await customer.findById(customerId);
 
+      if (!customers[0]) {
+        return res
+          .status(404)
+          .json({ error: `Customer with id ${customerId} not found` });
+      }
+
       res.status(200).json({ customer: customers[0] });
     } catch (error) {
       next(error);
