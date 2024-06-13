@@ -11,7 +11,10 @@ const customersController = {
   getAllCustomers: async (req, res, next) => {
     try {
       // customers contains rows returned by server fields contains extra meta data about rows, if available
-      const [customers, fields] = await customer.findAll();
+     const customers = await customer.findAll({
+       attributes: ["*", "id", "first_name", "last_name", "email"],
+     });
+
 
       res.status(200).json({ totalCustomers: customers.length, customers });
     } catch (error) {
@@ -23,7 +26,7 @@ const customersController = {
     try {
       let customerId = req.params.id;
 
-      let [customers, _] = await customer.findById(customerId);
+      let [customers, _] = await customer.findByPk(customerId);
 
       if (!customers[0]) {
         return res
