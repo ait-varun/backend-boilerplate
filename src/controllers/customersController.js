@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import customer from "../models/customers.js";
 
 const customersController = {
@@ -11,10 +12,9 @@ const customersController = {
   getAllCustomers: async (req, res, next) => {
     try {
       // customers contains rows returned by server fields contains extra meta data about rows, if available
-     const customers = await customer.findAll({
-       attributes: ["*", "id", "first_name", "last_name", "email"],
-     });
-
+      const customers = await customer.findAll({
+        attributes: ["*", "id", "first_name", "last_name", "email"],
+      });
 
       res.status(200).json({ totalCustomers: customers.length, customers });
     } catch (error) {
@@ -26,15 +26,17 @@ const customersController = {
     try {
       let customerId = req.params.id;
 
-      let [customers, _] = await customer.findByPk(customerId);
+      let customers = await customer.findOne({
+        where: { id: customerId },
+      });
 
-      if (!customers[0]) {
+      if (!customers) {
         return res
           .status(404)
           .json({ error: `Customer with id ${customerId} not found` });
       }
 
-      res.status(200).json({ customer: customers[0] });
+      res.status(200).json({ customer: customers });
     } catch (error) {
       next(error);
     }
