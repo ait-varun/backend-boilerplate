@@ -94,7 +94,9 @@ const customersController = {
       const customerId = req.body.id;
 
       // Check if the customer exists
-      const deletedCustomer = await customer.findByPk(customerId);
+      const deletedCustomer = await customer.findOne({
+        where: { id: customerId },
+      });
       if (!deletedCustomer) {
         return res
           .status(404)
