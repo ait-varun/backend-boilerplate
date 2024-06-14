@@ -1,9 +1,5 @@
-import { Sequelize, DataTypes } from "sequelize";
-
-const sequelize = new Sequelize("bodyandfragrance-app", "root", null, {
-  host: "localhost",
-  dialect: "mysql",
-});
+import { DataTypes } from "sequelize";
+import sequelize from "../config/db.js";
 
 const Customer = sequelize.define(
   "Customer",
