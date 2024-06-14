@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import customer from "../models/customers.js";
 
 const customersController = {
@@ -44,37 +43,41 @@ const customersController = {
 
   createNewCustomer: async (req, res, next) => {
     try {
-      let createdCustomer = req.body;
+      const { email, first_name, last_name } = req.body;
 
-      if (!createdCustomer.email) {
+      if (!email) {
         return res.status(400).json({
           error: "Email is required",
         });
       }
 
-      if (!createdCustomer.first_name) {
+      if (!first_name) {
         return res.status(400).json({
           error: "First name is required",
         });
       }
 
-      if (!createdCustomer.last_name) {
+      if (!last_name) {
         return res.status(400).json({
           error: "Last name is required",
         });
       }
 
-      //Check if the customer already exists
-      let [customers, field] = await customer.findByEmail(
-        createdCustomer.email
-      );
-      if (customers.length > 0) {
+      // Check if the customer already exists
+      const existingCustomer = await customer.findOne({ where: { email } });
+      if (existingCustomer) {
         return res.status(409).json({
-          error: `Customer with name ${createdCustomer.email} already exists`,
+          error: `Customer with email ${email} already exists`,
         });
       }
 
-      let [newCustomer, _] = await customer.createNewCustomer(createdCustomer);
+      // Create a new customer
+      const newCustomer = await customer.create({
+        email,
+        first_name,
+        last_name,
+      });
+
       res.status(201).json({ customer: newCustomer });
     } catch (error) {
       next(error);
@@ -83,17 +86,18 @@ const customersController = {
 
   deleteCustomer: async (req, res, next) => {
     try {
-      let customerId = req.body.id;
+      const customerId = req.body.id;
 
       // Check if the customer exists
-      let [customers, field] = await customer.findById(customerId);
-      if (customers.length === 0) {
+      const deletedCustomer = await customer.findByPk(customerId);
+      if (!deletedCustomer) {
         return res
           .status(404)
           .json({ error: `Customer with id ${customerId} not found` });
       }
 
-      await customer.deleteCustomer(customerId);
+      // Delete the customer
+      await deletedCustomer.destroy();
 
       res.status(204).end();
     } catch (error) {
