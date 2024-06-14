@@ -71,8 +71,13 @@ const customersController = {
         });
       }
 
+      const customers = await customer.findAll({
+        attributes: ["*", "id", "first_name", "last_name", "email"],
+      });
+
       // Create a new customer
       const newCustomer = await customer.create({
+        id: customers.length + 1,
         email,
         first_name,
         last_name,
