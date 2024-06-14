@@ -13,14 +13,14 @@ import { Sequelize } from "sequelize";
 
 // export default pool.promise();
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: "mysql",
-  }
-);
+const userName = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+const database = process.env.DB_NAME;
+const host = process.env.DB_HOST;
+
+const sequelize = new Sequelize(database, userName, password, {
+  host: host,
+  dialect: "mysql",
+});
 
 export default sequelize;
