@@ -1,3 +1,14 @@
+/**
+ * Defines the Customer model for the database.
+ *
+ * The Customer model has the following fields:
+ * - `id`: an auto-incrementing primary key integer
+ * - `first_name`: a required string field
+ * - `last_name`: a required string field
+ * - `email`: a required and unique string field
+ *
+ * The model is mapped to the `customers` table in the database.
+ */
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 
