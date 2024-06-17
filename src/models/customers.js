@@ -41,4 +41,6 @@ const Customer = sequelize.define(
   }
 );
 
+console.log(Customer === sequelize.models.Customer);
+
 export default Customer;

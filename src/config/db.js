@@ -26,6 +26,7 @@ const sequelize = new Sequelize(database, userName, password, {
    * as well as the maximum time to acquire a connection and the maximum time a
    * connection can remain idle before being closed.
    */
+
   pool: {
     max: 5,
     min: 0,
