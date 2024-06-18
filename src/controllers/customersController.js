@@ -63,6 +63,7 @@ const customersController = {
         });
       }
 
+
       // Check if the customer already exists
       const existingCustomer = await customer.findOne({ where: { email } });
       if (existingCustomer) {
