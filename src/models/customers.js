@@ -24,6 +24,12 @@ const Customer = sequelize.define(
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      // Let's say we wanted to see every first_name in uppercase, even
+      // though they are not necessarily uppercase in the database itself
+      get() {
+        const rawValue = this.getDataValue("first_name");
+        return rawValue.toUpperCase();
+      },
     },
     last_name: {
       type: DataTypes.STRING,

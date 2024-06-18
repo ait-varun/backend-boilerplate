@@ -8,8 +8,6 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // parse json bodies in the request object
-app.use(express.urlencoded()); // parse urlencoded bodies in the request Object
-// Returns middleware that only parses urlencoded bodies and only looks at requests where the Content-Type header matches the type option. This parser accepts only UTF-8 encoding of the body and supports automatic inflation of gzip and deflate encodings.
 
 
 // Use the middleware logger
