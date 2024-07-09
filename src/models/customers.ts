@@ -7,6 +7,14 @@ class Customers {
     const [rows] = await pool.query<RowDataPacket[]>("SELECT * FROM customers");
     return rows as Customer[];
   }
+
+  static async findByPk(id: number): Promise<Customer> {
+    const [row] = await pool.query<RowDataPacket[]>(
+      "SELECT * FROM customers WHERE id = ?",
+      [id]
+    );
+    return row as Customer;
+  }
 }
 
 export default Customers;

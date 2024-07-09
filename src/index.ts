@@ -9,22 +9,22 @@ const app = express();
 // Middleware
 app.use(express.json()); // parse json bodies in the request object
 
-// Global Error Handler
+// Error middleware
 app.use(errorMiddleware);
 
 // Redirect requests to endpoint starting with /posts to postRoutes.js
 app.use("/", router);
 
 // Global Error Handler. IMPORTANT function params MUST start with err
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  console.log(err.stack);
-  console.log(err.name);
-  console.log(err.message);
+// app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+//   console.log(err.stack);
+//   console.log(err.name);
+//   console.log(err.message);
 
-  res.status(500).json({
-    message: "Something went rely wrong",
-  });
-});
+//   res.status(500).json({
+//     message: "Something went rely wrong",
+//   });
+// });
 
 // Listen on pc port
 const PORT = process.env.PORT || 3000;

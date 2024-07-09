@@ -11,6 +11,19 @@ const customersController = {
       next(new HttpException(404, "Customers not found"));
     }
   },
+
+  getCustomerById: async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+    try {
+      const customers = await customer.findByPk(Number(id));
+      if (customer.length) {
+        res.status(200).json({ customers });
+      }
+      next(new HttpException(404, "Customer not found"));
+    } catch (error) {
+      next(new HttpException(404, "Customer may not Exist"));
+    }
+  },
 };
 
 export default customersController;
