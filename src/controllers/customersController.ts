@@ -19,7 +19,7 @@ const customersController = {
       if (customer.length) {
         res.status(200).json({ customers });
       }
-      next(new HttpException(404, "Customer not found"));
+     res.status(404).json({ message: `Customer with id ${id} not found` });
     } catch (error) {
       next(new HttpException(404, "Customer may not Exist"));
     }
