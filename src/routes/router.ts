@@ -1,6 +1,6 @@
 import { Router } from "express";
 import customersRouter from "./customersRoutes";
-import { httpLogger } from "../services/logger";
+import { logger } from "../utils/logger";
 
 const router = Router();
 
@@ -8,7 +8,7 @@ const router = Router();
 router.get("/", (req, res) => {
   res.send("Hello World!");
 
-  httpLogger.info("Home page requested");
+  logger.info("Home page requested");
 });
 
 router.use("/customers", customersRouter);

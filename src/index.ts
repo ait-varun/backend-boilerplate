@@ -3,11 +3,14 @@ process.loadEnvFile();
 
 import express, { Request, Response, NextFunction } from "express";
 import router from "./routes/router";
+import errorMiddleware from "./middleware/error.middleware";
 const app = express();
 
 // Middleware
 app.use(express.json()); // parse json bodies in the request object
 
+// Global Error Handler
+app.use(errorMiddleware);
 
 // Redirect requests to endpoint starting with /posts to postRoutes.js
 app.use("/", router);

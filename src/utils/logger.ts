@@ -4,7 +4,7 @@ const { combine, timestamp, json, printf } = winston.format;
 const timestampFormat = "MMM-DD-YYYY HH:mm:ss";
 
 // Logger for API endpoints
-export const httpLogger = winston.createLogger({
+export const logger = winston.createLogger({
   format: combine(
     timestamp({ format: timestampFormat }),
     json(),
