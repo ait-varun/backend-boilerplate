@@ -15,7 +15,7 @@ router.use("/customers", customersRouter);
 
 // Catch-all route for non-existent routes
 router.use("*", (req: Request, res: Response, next: NextFunction) => {
-  res.status(404).json({ error: "this page does not exist" });
+  res.status(404).json({ error: "This route does not exist" });
   logger.warn(`Route not found: ${req.method} ${req.originalUrl}`);
 });
 
