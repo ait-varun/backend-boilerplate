@@ -16,12 +16,12 @@ const customersController = {
     const { id } = req.params;
     try {
       const customers = await customer.findByPk(Number(id));
-      if (customer.length) {
-        res.status(200).json({ customers });
+      if (!customers) {
+        return next(new HttpException(404, `Customer with id ${id} not found`));
       }
-     res.status(404).json({ message: `Customer with id ${id} not found` });
+      res.status(200).json({ customers });
     } catch (error) {
-      next(new HttpException(404, "Customer may not Exist"));
+      next(new HttpException(500, "Internal Server Error"));
     }
   },
 };

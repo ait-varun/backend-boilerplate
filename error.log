@@ -1,0 +1,6 @@
+{"level":"error","message":"[GET] /customers/111 >> StatusCode:: 404, Message:: Customer may not Exist","timestamp":"Jul-09-2024 16:38:36"}
+{"level":"error","message":"[GET] /customers/111 >> StatusCode:: 404, Message:: Customer may not Exist","timestamp":"Jul-09-2024 16:38:50"}
+{"level":"error","message":"[GET] /customers/111 >> StatusCode:: 404, Message:: Customer may not Exist","timestamp":"Jul-09-2024 16:39:13"}
+{"level":"error","message":"[GET] /customers/223 >> StatusCode:: 404, Message:: Customer with id 223 not found","timestamp":"Jul-09-2024 16:44:58"}
+{"level":"error","message":"[GET] /customers/3434 >> StatusCode:: 404, Message:: Customer with id 3434 not found","timestamp":"Jul-09-2024 16:45:13"}
+{"level":"error","message":"[GET] /customers/23434 >> StatusCode:: 404, Message:: Customer with id 23434 not found","timestamp":"Jul-09-2024 16:46:04"}

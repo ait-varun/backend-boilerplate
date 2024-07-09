@@ -13,7 +13,7 @@ class Customers {
       "SELECT * FROM customers WHERE id = ?",
       [id]
     );
-    return row as Customer;
+    return row[0] as Customer;
   }
 }
 
