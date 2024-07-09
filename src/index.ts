@@ -1,7 +1,7 @@
 // Load environment variables from a file
 process.loadEnvFile();
 
-import express, { Request, Response, NextFunction } from "express";
+import express from "express";
 import router from "./routes/router";
 import errorMiddleware from "./middleware/error.middleware";
 const app = express();
