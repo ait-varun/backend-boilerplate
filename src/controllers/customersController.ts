@@ -5,7 +5,7 @@ import { HttpException } from "../exceptions/httpExceptions";
 const customersController = {
   getAllCustomers: async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const [customers, _] = await customer.findAll();
+      const customers = await customer.findAll();
       res.status(200).json({ customers });
     } catch (error) {
       next(new HttpException(404, "Customers not found"));
