@@ -3,7 +3,7 @@ import customersController from "../controllers/customersController";
 
 const router: Router = express.Router();
 
-// @route GET && POST - /posts/
+// @route GET && POST - /customers
 router.route("/").get(customersController.getAllCustomers);
 
 router.route("/:id").get(customersController.getCustomerById);
