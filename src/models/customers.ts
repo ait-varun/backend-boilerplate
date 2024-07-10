@@ -1,5 +1,5 @@
 import pool from "../config/db";
-import { RowDataPacket } from "mysql2";
+import { RowDataPacket, ResultSetHeader } from "mysql2";
 import { Customer } from "../interfaces/customers";
 
 class Customers {
@@ -14,6 +14,21 @@ class Customers {
       [id]
     );
     return row[0] as Customer;
+  }
+
+  static async create(email: string, name: string): Promise<Customer> {
+    const [result] = await pool.query<ResultSetHeader>(
+      "INSERT INTO customers (email, name) VALUES (?, ?)",
+      [email, name]
+    );
+    const insertedId = result.insertId;
+    return this.findByPk(insertedId);
+  }
+
+  static async deleteByPk(id: number): Promise<void> {
+    await pool.query<ResultSetHeader>("DELETE FROM customers WHERE id = ?", [
+      id,
+    ]);
   }
 }
 
