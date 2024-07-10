@@ -6,7 +6,11 @@ const customersController = {
   getAllCustomers: async (req: Request, res: Response, next: NextFunction) => {
     try {
       const customers = await customer.findAll();
-      res.status(200).json({ customers });
+      if (!customers || customers.length === 0) {
+        res.status(404).json({ message: "Customers not found" });
+        return next(new HttpException(404, "Customers not found"));
+      }
+      res.status(200).json({ totalCustomers: customers.length, customers });
     } catch (error) {
       next(new HttpException(404, "Customers not found"));
     }

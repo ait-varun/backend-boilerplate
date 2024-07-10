@@ -4,3 +4,12 @@
 {"level":"error","message":"[GET] /customers/223 >> StatusCode:: 404, Message:: Customer with id 223 not found","timestamp":"Jul-09-2024 16:44:58"}
 {"level":"error","message":"[GET] /customers/3434 >> StatusCode:: 404, Message:: Customer with id 3434 not found","timestamp":"Jul-09-2024 16:45:13"}
 {"level":"error","message":"[GET] /customers/23434 >> StatusCode:: 404, Message:: Customer with id 23434 not found","timestamp":"Jul-09-2024 16:46:04"}
+{"level":"error","message":"[GET] /customers/d >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:01:05"}
+{"level":"error","message":"[GET] /customers/dfdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:01:08"}
+{"level":"error","message":"[GET] /customers//dfd >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:01:10"}
+{"level":"error","message":"[GET] /customers/34 >> StatusCode:: 404, Message:: Customer with id 34 not found","timestamp":"Jul-10-2024 12:02:04"}
+{"level":"error","message":"[GET] /customers/dsfsd >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:02:06"}
+{"level":"error","message":"[GET] /customers/2dfe >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:03:16"}
+{"level":"error","message":"[GET] /customers/22 >> StatusCode:: 404, Message:: Customer with id 22 not found","timestamp":"Jul-10-2024 12:03:19"}
+{"level":"error","message":"[GET] /customers/22 >> StatusCode:: 404, Message:: Customer with id 22 not found","timestamp":"Jul-10-2024 12:03:19"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-10-2024 12:03:39"}
