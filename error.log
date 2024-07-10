@@ -16,3 +16,7 @@
 {"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:24:34"}
 {"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:26:34"}
 {"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:26:36"}
+{"level":"error","message":"[GET] /customers/sdfds >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:54:48"}
+{"level":"error","message":"[GET] /customers//df >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:54:52"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-10-2024 12:54:58"}
+{"level":"error","message":"[DELETE] /customers/delete/10 >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 12:55:11"}
