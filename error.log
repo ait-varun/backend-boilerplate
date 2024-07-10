@@ -13,3 +13,6 @@
 {"level":"error","message":"[GET] /customers/22 >> StatusCode:: 404, Message:: Customer with id 22 not found","timestamp":"Jul-10-2024 12:03:19"}
 {"level":"error","message":"[GET] /customers/22 >> StatusCode:: 404, Message:: Customer with id 22 not found","timestamp":"Jul-10-2024 12:03:19"}
 {"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-10-2024 12:03:39"}
+{"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:24:34"}
+{"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:26:34"}
+{"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:26:36"}

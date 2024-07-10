@@ -34,6 +34,10 @@ const customersController = {
       return next(new HttpException(400, "Email and name are required"));
     }
     try {
+      const existingCustomer = await customer.findByEmail(email);
+      if (existingCustomer) {
+        return next(new HttpException(409, "Email already exists"));
+      }
       const newCustomer = await customer.create(email, name);
       res
         .status(201)
