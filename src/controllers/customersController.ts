@@ -1,67 +1,52 @@
 import { Request, Response, NextFunction } from "express";
 import customer from "../models/customers";
 import { HttpException } from "../exceptions/httpExceptions";
+import { asyncHandler } from "../utils/utils";
 
 const customersController = {
-  getAllCustomers: async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const customers = await customer.findAll();
-      if (!customers || customers.length === 0) {
-        res.status(404).json({ message: "Customers not found" });
-        return next(new HttpException(404, "Customers not found"));
-      }
-      res.status(200).json({ totalCustomers: customers.length, customers });
-    } catch (error) {
-      next(new HttpException(404, "Customers not found"));
+  getAllCustomers: asyncHandler(async (req: Request, res: Response) => {
+    const customers = await customer.findAll();
+    if (!customers || customers.length === 0) {
+      throw new HttpException(404, "Customers not found");
     }
-  },
+    res.status(200).json({ totalCustomers: customers.length, customers });
+  }),
 
-  getCustomerById: async (req: Request, res: Response, next: NextFunction) => {
+  getCustomerById: asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.params;
-    try {
-      const customers = await customer.findByPk(Number(id));
-      if (!customers) {
-        return next(new HttpException(404, `Customer with id ${id} not found`));
-      }
-      res.status(200).json({ customers });
-    } catch (error) {
-      next(new HttpException(500, "Internal Server Error"));
+    const customers = await customer.findByPk(Number(id));
+    if (!customers) {
+      throw new HttpException(404, `Customer with id ${id} not found`);
     }
-  },
-  addCustomer: async (req: Request, res: Response, next: NextFunction) => {
+    res.status(200).json({ customers });
+  }),
+
+  addCustomer: asyncHandler(async (req: Request, res: Response) => {
     const { email, name } = req.body;
     if (!email || !name) {
-      return next(new HttpException(400, "Email and name are required"));
+      throw new HttpException(400, "Email and name are required");
     }
-    try {
-      const existingCustomer = await customer.findByEmail(email);
-      if (existingCustomer) {
-        return next(new HttpException(409, "Email already exists"));
-      }
-      const newCustomer = await customer.create(email, name);
-      res
-        .status(201)
-        .json({ message: "Customer created successfully", newCustomer });
-    } catch (error) {
-      next(new HttpException(500, "Internal Server Error"));
+    const existingCustomer = await customer.findByEmail(email);
+    if (existingCustomer) {
+      throw new HttpException(409, "Email already exists");
     }
-  },
+    const newCustomer = await customer.create(email, name);
+    res
+      .status(201)
+      .json({ message: "Customer created successfully", newCustomer });
+  }),
 
-  deleteCustomer: async (req: Request, res: Response, next: NextFunction) => {
+  deleteCustomer: asyncHandler(async (req: Request, res: Response) => {
     const { id } = req.params;
-    try {
-      const customers = await customer.findByPk(Number(id));
-      if (!customers) {
-        return next(new HttpException(404, `Customer with id ${id} not found`));
-      }
-      await customer.deleteByPk(Number(id));
-      res
-        .status(200)
-        .json({ message: `Customer with id ${id} deleted successfully` });
-    } catch (error) {
-      next(new HttpException(500, "Internal Server Error"));
+    const customers = await customer.findByPk(Number(id));
+    if (!customers) {
+      throw new HttpException(404, `Customer with id ${id} not found`);
     }
-  },
+    await customer.deleteByPk(Number(id));
+    res
+      .status(200)
+      .json({ message: `Customer with id ${id} deleted successfully` });
+  }),
 };
 
 export default customersController;

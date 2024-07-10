@@ -16,3 +16,10 @@
 {"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:24:34"}
 {"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:26:34"}
 {"level":"error","message":"[DELETE] /customers/delete/4 >> StatusCode:: 404, Message:: Customer with id 4 not found","timestamp":"Jul-10-2024 12:26:36"}
+{"level":"error","message":"[DELETE] /customers/delete/11 >> StatusCode:: 404, Message:: Customer with id 11 not found","timestamp":"Jul-10-2024 14:42:55"}
+{"level":"error","message":"[DELETE] /customers/delete/11 >> StatusCode:: 404, Message:: Customer with id 11 not found","timestamp":"Jul-10-2024 14:42:58"}
+{"level":"error","message":"[GET] /customers/3434 >> StatusCode:: 404, Message:: Customer with id 3434 not found","timestamp":"Jul-10-2024 15:49:28"}
+{"level":"error","message":"[GET] /customers/3434 >> StatusCode:: 404, Message:: Customer with id 3434 not found","timestamp":"Jul-10-2024 15:49:28"}
+{"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 15:49:37"}
+{"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Serverdfdf Error","timestamp":"Jul-10-2024 15:49:45"}
+{"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 15:49:50"}
