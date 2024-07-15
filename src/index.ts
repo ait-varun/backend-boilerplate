@@ -7,7 +7,12 @@ import errorMiddleware from "./middleware/error.middleware";
 import cors from "cors";
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Your frontend origin
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(express.json()); // parse json bodies in the request object

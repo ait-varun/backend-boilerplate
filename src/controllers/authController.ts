@@ -1,3 +1,5 @@
+// Load environment variables from a file
+process.loadEnvFile();
 import { Request, Response } from "express";
 import Users from "../models/user";
 import { HttpException } from "../exceptions/httpExceptions";
@@ -5,6 +7,7 @@ import { asyncHandler } from "../utils/utils";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { AuthenticatedRequest } from "../interfaces/auth";
+import path from "path";
 
 const authController = {
   signup: asyncHandler(async (req: Request, res: Response) => {
@@ -58,11 +61,21 @@ const authController = {
 
     const token = jwt.sign(
       { userId: user.id, email: user.email },
-      process.env.JWT_SECRET!,
-      { expiresIn: "1h" }
+      process.env.JWT_SECRET!
     );
 
-    res.status(200).json({ message: "Login successful", token });
+    // Set the cookie before sending the response
+    res.cookie("token", token, {
+      domain: "localhost",
+      path: "/",
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 60 * 60 * 24 * 7,
+    });
+
+    // Send the response
+    res.status(200).json({ message: "success", token });
   }),
 
   getCurrentUser: asyncHandler(

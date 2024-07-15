@@ -45,3 +45,9 @@
 {"level":"error","message":"[POST] /signup >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 11:20:30"}
 {"level":"error","message":"[POST] /signup >> StatusCode:: 400, Message:: Expected double-quoted property name in JSON at position 59","timestamp":"Jul-15-2024 11:52:49"}
 {"level":"error","message":"[POST] /signup >> StatusCode:: 400, Message:: Email, password, and name are required","timestamp":"Jul-15-2024 11:52:53"}
+{"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 12:50:51"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 13:07:41"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 13:09:04"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 13:10:16"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 13:10:42"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 13:11:54"}
