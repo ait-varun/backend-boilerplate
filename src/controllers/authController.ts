@@ -1,4 +1,3 @@
-import { authenticateToken } from "./../middleware/authenticationToken";
 // Load environment variables from a file
 process.loadEnvFile();
 import { Request, Response } from "express";
@@ -8,7 +7,6 @@ import { asyncHandler } from "../utils/utils";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { AuthenticatedRequest } from "../interfaces/auth";
-import path from "path";
 
 const authController = {
   signup: asyncHandler(async (req: Request, res: Response) => {

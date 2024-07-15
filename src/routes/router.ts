@@ -19,16 +19,6 @@ router.get("/", (req, res) => {
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 
-// router.get("/me", authenticateToken, (req: Request, res: Response) => {
-//   const authenticatedReq = req as AuthenticatedRequest;
-//   if (authenticatedReq.user) {
-//     const { email, userId } = authenticatedReq.user;
-//     res.json({ email, userId });
-//   } else {
-//     res.status(401).json({ message: "User not authenticated" });
-//   }
-// });
-
 router.use("/customers", authenticateToken, customersRouter);
 
 // Catch-all route for non-existent routes
