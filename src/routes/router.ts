@@ -18,7 +18,6 @@ router.get("/", (req, res) => {
 
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
-router.get("/me", authenticateToken, authController.getCurrentUser);
 
 // router.get("/me", authenticateToken, (req: Request, res: Response) => {
 //   const authenticatedReq = req as AuthenticatedRequest;
@@ -30,9 +29,7 @@ router.get("/me", authenticateToken, authController.getCurrentUser);
 //   }
 // });
 
-
-
-router.use("/customers", customersRouter);
+router.use("/customers", authenticateToken, customersRouter);
 
 // Catch-all route for non-existent routes
 router.use("*", (req: Request, res: Response, next: NextFunction) => {

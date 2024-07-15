@@ -1,3 +1,4 @@
+import { authenticateToken } from "./../middleware/authenticationToken";
 // Load environment variables from a file
 process.loadEnvFile();
 import { Request, Response } from "express";
@@ -66,12 +67,9 @@ const authController = {
 
     // Set the cookie before sending the response
     res.cookie("token", token, {
-      domain: "localhost",
-      path: "/",
-      httpOnly: true,
-      secure: true,
-      sameSite: "strict",
-      maxAge: 60 * 60 * 24 * 7,
+      domain: "localhost", // Set the domain to localhost
+      sameSite: "strict", // Set the cookie to sameSite
+      maxAge: 60 * 60 * 24 * 7, // Set the cookie to expire after 7 days
     });
 
     // Send the response
