@@ -4,7 +4,10 @@ process.loadEnvFile();
 import express from "express";
 import router from "./routes/router";
 import errorMiddleware from "./middleware/error.middleware";
+import cors from "cors";
 const app = express();
+
+app.use(cors());
 
 // Middleware
 app.use(express.json()); // parse json bodies in the request object

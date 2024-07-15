@@ -16,6 +16,7 @@ import { HttpException } from "../exceptions/httpExceptions";
 const asyncHandler =
   (fn: Function) => (req: Request, res: Response, next: NextFunction) => {
     Promise.resolve(fn(req, res, next)).catch((error) => {
+      console.error("Error in asyncHandler:", error);
       if (error instanceof HttpException) {
         next(error);
       } else {

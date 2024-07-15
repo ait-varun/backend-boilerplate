@@ -23,3 +23,25 @@
 {"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 15:49:37"}
 {"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Serverdfdf Error","timestamp":"Jul-10-2024 15:49:45"}
 {"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 15:49:50"}
+{"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 11:02:25"}
+{"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 11:03:54"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 400, Message:: Email, password, and name are required","timestamp":"Jul-15-2024 11:04:38"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:05:14"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:06:28"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:08:08"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:08:22"}
+{"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 11:08:28"}
+{"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 11:08:35"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:08:39"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:08:48"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 400, Message:: Email and password are required","timestamp":"Jul-15-2024 11:08:49"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:08:54"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 400, Message:: Expected double-quoted property name in JSON at position 63","timestamp":"Jul-15-2024 11:09:06"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:10:25"}
+{"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 11:14:36"}
+{"level":"error","message":"[GET] /customers/2 >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:14:40"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-15-2024 11:14:43"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid credentials","timestamp":"Jul-15-2024 11:19:42"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 11:20:30"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 400, Message:: Expected double-quoted property name in JSON at position 59","timestamp":"Jul-15-2024 11:52:49"}
+{"level":"error","message":"[POST] /signup >> StatusCode:: 400, Message:: Email, password, and name are required","timestamp":"Jul-15-2024 11:52:53"}
