@@ -69,7 +69,8 @@ const authController = {
     res.cookie("token", token, {
       domain: "localhost", // Set the domain to localhost
       sameSite: "strict", // Set the cookie to sameSite
-      maxAge: 60 * 60 * 24 * 7, // Set the cookie to expire after 7 days
+      // maxAge: 24 * 60 * 60 * 1000, // 24 hours
+      maxAge: 60 * 1000, // 1 minute
     });
 
     // Send the response

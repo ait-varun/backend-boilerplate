@@ -6,7 +6,7 @@ import { asyncHandler } from "../utils/utils";
 const customersController = {
   getAllCustomers: asyncHandler(async (req: Request, res: Response) => {
     const customers = await customer.findAll();
-    if (!customers || customers.length === 0) {
+    if (!customers) {
       throw new HttpException(404, "Customers not found");
     }
     res.status(200).json({ totalCustomers: customers.length, customers });

@@ -131,3 +131,24 @@
 {"level":"error","message":"[GET] /me >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 16:26:50"}
 {"level":"error","message":"[GET] /customers >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 16:28:50"}
 {"level":"error","message":"[GET] /customers >> StatusCode:: 401, Message:: Authentication token required","timestamp":"Jul-15-2024 16:38:46"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:23:16"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:24:08"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:24:19"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:26:38"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:26:49"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:27:05"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:28:27"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:28:29"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:29:42"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:29:54"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-15-2024 17:34:49"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-15-2024 17:34:49"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-15-2024 17:34:49"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-15-2024 17:34:49"}
+{"level":"error","message":"[GET] /customers >> StatusCode:: 404, Message:: Customers not found","timestamp":"Jul-15-2024 17:34:49"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:53:07"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:53:11"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:53:28"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:54:01"}
+{"level":"error","message":"[POST] /customers/add >> StatusCode:: 409, Message:: Email already exists","timestamp":"Jul-15-2024 17:54:45"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid credentials","timestamp":"Jul-15-2024 18:00:11"}
