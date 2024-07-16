@@ -67,7 +67,8 @@ const authController = {
       res.cookie("token", token, {
         domain: process.env.DOMAIN,
         sameSite: "strict",
-        maxAge: 60 * 1000,
+        // maxAge: 60 * 1000,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
       });
 
       res.status(200).json({ message: "Login successful!", token });
