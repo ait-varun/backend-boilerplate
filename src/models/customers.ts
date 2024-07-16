@@ -8,12 +8,12 @@ class Customers {
     return rows as Customer[];
   }
 
-  static async findByPk(id: number): Promise<Customer> {
-    const [row] = await pool.query<RowDataPacket[]>(
+  static async findByPk(id: number): Promise<Customer | null> {
+    const [rows] = await pool.query<RowDataPacket[]>(
       "SELECT * FROM customers WHERE id = ?",
       [id]
     );
-    return row[0] as Customer;
+    return rows[0] as Customer | null;
   }
 
   static async findByEmail(email: string): Promise<Customer | null> {
@@ -21,10 +21,7 @@ class Customers {
       "SELECT * FROM customers WHERE email = ?",
       [email]
     );
-    if (rows.length === 0) {
-      return null;
-    }
-    return rows[0] as Customer;
+    return rows[0] as Customer | null;
   }
 
   static async create(email: string, name: string): Promise<Customer> {
@@ -33,7 +30,7 @@ class Customers {
       [email, name]
     );
     const insertedId = result.insertId;
-    return this.findByPk(insertedId);
+    return this.findByPk(insertedId) as Promise<Customer>;
   }
 
   static async deleteByPk(id: number): Promise<void> {
