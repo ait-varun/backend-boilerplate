@@ -51,12 +51,12 @@ const authController = {
 
       const user = await Users.findByEmail(email);
       if (!user) {
-        throw new HttpException(401, "Invalid credentials");
+        throw new HttpException(401, "Invalid Email");
       }
 
       const isPasswordValid = await bcrypt.compare(password, user.password);
       if (!isPasswordValid) {
-        throw new HttpException(401, "Invalid credentials");
+        throw new HttpException(401, "Invalid Password");
       }
 
       const token = jwt.sign(
