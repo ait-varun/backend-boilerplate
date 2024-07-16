@@ -1,3 +1,5 @@
+// Load environment variables from a file
+process.loadEnvFile();
 import { Request, Response } from "express";
 import Users from "../models/user";
 import { HttpException } from "../exceptions/httpExceptions";
@@ -63,7 +65,7 @@ const authController = {
       );
 
       res.cookie("token", token, {
-        domain: "localhost",
+        domain: process.env.DOMAIN,
         sameSite: "strict",
         maxAge: 60 * 1000,
       });
