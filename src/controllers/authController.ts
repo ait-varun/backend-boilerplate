@@ -6,40 +6,38 @@ import { asyncHandler } from "../utils/utils";
 import { AuthenticatedRequest } from "../interfaces/auth";
 import AuthService from "../services/authService";
 
-const authService = new AuthService();
+class AuthController {
+  private authService: AuthService;
 
-const authController = {
-  signup: asyncHandler(async (req: Request, res: Response) => {
+  constructor() {
+    this.authService = new AuthService();
+  }
+
+  signup = asyncHandler(async (req: Request, res: Response) => {
     const { email, password, name } = req.body;
-
-    const newUser = await authService.signup(email, password, name);
-
+    const newUser = await this.authService.signup(email, password, name);
     res
       .status(201)
       .json({ message: "User created successfully", userId: newUser.id });
-  }),
+  });
 
-  login: asyncHandler(async (req: Request, res: Response) => {
+  login = asyncHandler(async (req: Request, res: Response) => {
     const { email, password } = req.body;
-
-    const { token, user } = await authService.login(email, password);
-
+    const { token, user } = await this.authService.login(email, password);
     res.cookie("token", token, {
       domain: process.env.DOMAIN,
       sameSite: "strict",
       maxAge: 1000 * 60 * 60 * 24 * 7,
     });
-
     res.status(200).json({ message: "Login successful!", token, user });
-  }),
+  });
 
-  getCurrentUser: asyncHandler(
+  getCurrentUser = asyncHandler(
     async (req: AuthenticatedRequest, res: Response) => {
-      const user = await authService.getCurrentUser(req.user);
-
+      const user = await this.authService.getCurrentUser(req.user);
       res.status(200).json({ user });
     }
-  ),
-};
+  );
+}
 
-export default authController;
+export default new AuthController();

@@ -168,3 +168,6 @@
 {"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid credentials","timestamp":"Jul-16-2024 11:26:56"}
 {"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid credentials","timestamp":"Jul-16-2024 11:28:51"}
 {"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Password","timestamp":"Jul-16-2024 17:46:59"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 17:53:27"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Password","timestamp":"Jul-16-2024 17:53:31"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Password","timestamp":"Jul-16-2024 17:53:34"}
