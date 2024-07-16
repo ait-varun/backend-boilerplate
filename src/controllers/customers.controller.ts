@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { asyncHandler } from "../utils/utils";
-import customerService from "../services/customerService";
+import customerService from "../services/customers.service";
 
 class CustomersController {
   getAllCustomers = asyncHandler(async (req: Request, res: Response) => {

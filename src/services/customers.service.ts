@@ -1,4 +1,4 @@
-import Customers from "../models/customers";
+import Customers from "../models/customers.model";
 import { Customer } from "../interfaces/customers";
 import { HttpException } from "../exceptions/httpExceptions";
 

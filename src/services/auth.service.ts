@@ -1,4 +1,4 @@
-import Users from "../models/user";
+import Users from "../models/user.model";
 import { HttpException } from "../exceptions/httpExceptions";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";

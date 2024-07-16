@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from "express";
-import customersRouter from "./customersRoutes";
+import customersRouter from "./customers.route";
 import { logger } from "../utils/logger";
-import { authenticateToken } from "../middleware/authenticationToken";
-import authController from "../controllers/authController";
+import { authenticateToken } from "../middleware/authToken.middleware";
+import authController from "../controllers/auth.controller";
 
 
 const router = Router();
