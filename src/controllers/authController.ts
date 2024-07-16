@@ -68,7 +68,7 @@ const authController = {
         maxAge: 60 * 1000,
       });
 
-      res.status(200).json({ message: "success", token });
+      res.status(200).json({ message: "Login successful!", token });
     } catch (error) {
       console.error("Error in login function:", error);
       throw error;
