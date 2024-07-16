@@ -1,5 +1,3 @@
-// Load environment variables from a file
-process.loadEnvFile();
 import { Request, Response } from "express";
 import Users from "../models/user";
 import { HttpException } from "../exceptions/httpExceptions";
@@ -42,47 +40,54 @@ const authController = {
   }),
 
   login: asyncHandler(async (req: Request, res: Response) => {
-    const { email, password } = req.body;
+    try {
+      const { email, password } = req.body;
 
-    if (!email || !password) {
-      throw new HttpException(400, "Email and password are required");
+      if (!email || !password) {
+        throw new HttpException(400, "Email and password are required");
+      }
+
+      const user = await Users.findByEmail(email);
+      if (!user) {
+        throw new HttpException(401, "Invalid credentials");
+      }
+
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        throw new HttpException(401, "Invalid credentials");
+      }
+
+      const token = jwt.sign(
+        { userId: user.id, email: user.email },
+        process.env.JWT_SECRET!
+      );
+
+      res.cookie("token", token, {
+        domain: "localhost",
+        sameSite: "strict",
+        maxAge: 60 * 1000,
+      });
+
+      res.status(200).json({ message: "success", token });
+    } catch (error) {
+      console.error("Error in login function:", error);
+      throw error;
     }
-
-    const user = await Users.findByEmail(email);
-    if (!user) {
-      throw new HttpException(401, "Invalid credentials");
-    }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      throw new HttpException(401, "Invalid credentials");
-    }
-
-    const token = jwt.sign(
-      { userId: user.id, email: user.email },
-      process.env.JWT_SECRET!
-    );
-
-    // Set the cookie before sending the response
-    res.cookie("token", token, {
-      domain: "localhost", // Set the domain to localhost
-      sameSite: "strict", // Set the cookie to sameSite
-      // maxAge: 24 * 60 * 60 * 1000, // 24 hours
-      maxAge: 60 * 1000, // 1 minute
-    });
-
-    // Send the response
-    res.status(200).json({ message: "success", token });
   }),
 
   getCurrentUser: asyncHandler(
     async (req: AuthenticatedRequest, res: Response) => {
-      const user = req.user;
-      if (!user) {
-        throw new HttpException(401, "Not authenticated");
-      }
+      try {
+        const user = req.user;
+        if (!user) {
+          throw new HttpException(401, "Not authenticated");
+        }
 
-      res.status(200).json({ user });
+        res.status(200).json({ user });
+      } catch (error) {
+        console.error("Error in getCurrentUser function:", error);
+        throw error;
+      }
     }
   ),
 };
