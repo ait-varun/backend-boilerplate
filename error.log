@@ -171,3 +171,10 @@
 {"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 17:53:27"}
 {"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Password","timestamp":"Jul-16-2024 17:53:31"}
 {"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Password","timestamp":"Jul-16-2024 17:53:34"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 18:03:32"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-16-2024 18:05:18"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 18:09:15"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 18:09:18"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 18:09:42"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 18:10:33"}
+{"level":"error","message":"[POST] /login >> StatusCode:: 401, Message:: Invalid Email","timestamp":"Jul-16-2024 18:10:35"}

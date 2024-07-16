@@ -1,7 +1,6 @@
 // Load environment variables from a file
 process.loadEnvFile();
 import { Request, Response } from "express";
-import { HttpException } from "../exceptions/httpExceptions";
 import { asyncHandler } from "../utils/utils";
 import { AuthenticatedRequest } from "../interfaces/auth";
 import AuthService from "../services/auth.service";
