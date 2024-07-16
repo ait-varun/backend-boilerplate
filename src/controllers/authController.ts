@@ -13,13 +13,13 @@ const authController = {
     try {
       const { email, password, name } = req.body;
 
-      console.log("Received signup request for:", email);
+      // console.log("Received signup request for:", email);
 
       if (!email || !password || !name) {
         throw new HttpException(400, "Email, password, and name are required");
       }
 
-      console.log("Checking for existing user");
+      // console.log("Checking for existing user");
       const existingUser = await Users.findByEmail(email);
       if (existingUser) {
         throw new HttpException(409, "Email already exists");
@@ -28,15 +28,15 @@ const authController = {
       console.log("Hashing password");
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      console.log("Creating new user");
+      // console.log("Creating new user");
       const newUser = await Users.create(email, hashedPassword, name);
 
-      console.log("User created successfully");
+      // console.log("User created successfully");
       res
         .status(201)
         .json({ message: "User created successfully", userId: newUser.id });
     } catch (error) {
-      console.error("Error in signup function:", error);
+      // console.error("Error in signup function:", error);
       throw error;
     }
   }),
