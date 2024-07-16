@@ -2,8 +2,6 @@ import { Router, Request, Response, NextFunction } from "express";
 import customersRouter from "./customersRoutes";
 import { logger } from "../utils/logger";
 import { authenticateToken } from "../middleware/authenticationToken";
-import { JwtPayload } from "jsonwebtoken";
-import { AuthenticatedRequest } from "../interfaces/auth";
 import authController from "../controllers/authController";
 
 
