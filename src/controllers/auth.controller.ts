@@ -19,7 +19,6 @@ class AuthController {
       .status(201)
       .json({ message: "User created successfully", userId: newUser.id });
   });
-
   login = asyncHandler(async (req: Request, res: Response) => {
     const { email, password } = req.body;
     const { token, user } = await this.authService.login(email, password);
