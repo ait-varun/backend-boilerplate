@@ -1,7 +1,6 @@
-Use the package manager [npm](https://www.npmjs.com/) to install express and other packages.
+# Use the package manager [npm](https://www.npmjs.com/) to install express and other packages.
 
-# Install Express
-
+## Install Express
 
 ```bash
 npm i express
@@ -9,15 +8,13 @@ npm i express
 
 Check out the [Express](https://expressjs.com/) for more details.
 
-# Install Nodemon (optional)
+## Install Nodemon (optional)
 
 ```bash
 npm i -g nodemon
 ```
 
 Check out the [Nodemon](https://github.com/remy/nodemon#nodemon) for more details.
-
-
 
 ## Install MySQL2
 

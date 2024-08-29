@@ -23,3 +23,4 @@
 {"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 15:49:37"}
 {"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Serverdfdf Error","timestamp":"Jul-10-2024 15:49:45"}
 {"level":"error","message":"[GET] /customers/dfsdf >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-10-2024 15:49:50"}
+{"level":"error","message":"[GET] /customers/login >> StatusCode:: 500, Message:: Internal Server Error","timestamp":"Jul-19-2024 09:59:46"}
